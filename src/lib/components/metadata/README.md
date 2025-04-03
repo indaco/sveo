@@ -80,23 +80,12 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
 
 The `PageMetatags` component exposes the following properties:
 
-| Property    | Type         | Required | Default |
-| :---------- | :----------: | :------: | :-----: |
-| data        | `SEOWebPage` | yes      |         |
+| Prop   | Type         | Required | Description                                |
+| :----- | :----------: | :------: | :----------------------------------------- |
+| `data` | [SEOWebPage] | yes      | The SEO object containing Page metadata    |
 
-```typescript
-type SEOWebPage = {
-    url: string;
-    title: string;
-    description?: string;
-    author?: string;
-    keywords?: Array<string>;
-    image?: string;
-    imageAlt?: string;
-    opengraph?: OpenGraph;
-    twitter?: TwitterCard;
-};
-```
+<!-- Resource Links -->
 
+[SEOWebPage]: https://github.com/indaco/sveo/blob/913f83920f7f76183fc7d6ea58eebbceeb82f452/src/lib/types.ts#L34-L43
 [OpenGraph]: https://ogp.me/
 [TwitterCard]: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
