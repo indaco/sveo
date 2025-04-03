@@ -84,8 +84,23 @@ export enum EnumOpenGraphType {
 
 export enum EnumOpenGraphProfileGender {
 	Male = 'male',
-	Female = 'female'
+	Female = 'female',
+	NonBinary = 'non-binary',
+	Transgender = 'transgender',
+	Intersex = 'intersex',
+	Other = 'other',
+	PreferNotToSay = 'prefer_not_to_say'
 }
+
+export const OpenGraphProfileGender: typeof EnumOpenGraphProfileGender = {
+	Male: EnumOpenGraphProfileGender.Male,
+	Female: EnumOpenGraphProfileGender.Female,
+	NonBinary: EnumOpenGraphProfileGender.NonBinary,
+	Transgender: EnumOpenGraphProfileGender.Transgender,
+	Intersex: EnumOpenGraphProfileGender.Intersex,
+	Other: EnumOpenGraphProfileGender.Other,
+	PreferNotToSay: EnumOpenGraphProfileGender.PreferNotToSay
+};
 
 export const OpenGraphType: typeof EnumOpenGraphType = {
 	Website: EnumOpenGraphType.Website,
@@ -102,11 +117,6 @@ export const OpenGraphType: typeof EnumOpenGraphType = {
 	VideoEpisode: EnumOpenGraphType.VideoEpisode,
 	VideoTVShow: EnumOpenGraphType.VideoTVShow,
 	VideoOther: EnumOpenGraphType.VideoOther
-};
-
-export const OpenGraphProfileGender: typeof EnumOpenGraphProfileGender = {
-	Male: EnumOpenGraphProfileGender.Male,
-	Female: EnumOpenGraphProfileGender.Female
 };
 
 export type OpenGraph = {
