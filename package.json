@@ -1,0 +1,243 @@
+{
+	"name": "@indaco/sveo",
+	"version": "0.1.0",
+	"private": false,
+	"description": "SEO made simple for Svelte & SvelteKit.",
+	"keywords": [
+		"svelte",
+		"svelte5",
+		"sveltekit",
+		"components",
+		"svelte components",
+		"seo",
+		"jsonld",
+		"schemaorg",
+		"opengraph",
+		"metatags"
+	],
+	"bugs": {
+		"url": "https://github.com/indaco/sveo/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/indaco/sveo.git"
+	},
+	"license": "MIT",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		"./package.json": "./package.json",
+		"./metadata": {
+			"types": "./dist/components/metadata/index.d.ts",
+			"svelte": "./dist/components/metadata/index.js",
+			"default": "./dist/components/metadata/index.js"
+		},
+		"./metadata/PageMetaTags.svelte": {
+			"types": "./dist/components/metadata/PageMetaTags.svelte.d.ts",
+			"svelte": "./dist/components/metadata/PageMetaTags.svelte",
+			"default": "./dist/components/metadata/PageMetaTags.svelte"
+		},
+		"./metadata/opengraph": {
+			"types": "./dist/components/metadata/opengraph/index.d.ts",
+			"svelte": "./dist/components/metadata/opengraph/index.js",
+			"default": "./dist/components/metadata/opengraph/index.js"
+		},
+		"./metadata/opengraph/OpenGraph.svelte": {
+			"types": "./dist/components/metadata/opengraph/OpenGraph.svelte.d.ts",
+			"svelte": "./dist/components/metadata/opengraph/OpenGraph.svelte",
+			"default": "./dist/components/metadata/opengraph/OpenGraph.svelte"
+		},
+		"./metadata/twittercard": {
+			"types": "./dist/components/metadata/twittercard/index.d.ts",
+			"svelte": "./dist/components/metadata/twittercard/index.js",
+			"default": "./dist/components/metadata/twittercard/index.js"
+		},
+		"./metadata/twittercard/TwitterCard.svelte": {
+			"types": "./dist/components/metadata/twittercard/TwitterCard.svelte.d.ts",
+			"svelte": "./dist/components/metadata/twittercard/TwitterCard.svelte",
+			"default": "./dist/components/metadata/twittercard/TwitterCard.svelte"
+		},
+		"./schemaorg": {
+			"types": "./dist/components/schemaorg/index.d.ts",
+			"svelte": "./dist/components/schemaorg/index.js",
+			"default": "./dist/components/schemaorg/index.js"
+		},
+		"./schemaorg/breadcrumbs": {
+			"types": "./dist/components/schemaorg/breadcrumbs/index.d.ts",
+			"svelte": "./dist/components/schemaorg/breadcrumbs/index.js",
+			"default": "./dist/components/schemaorg/breadcrumbs/index.js"
+		},
+		"./schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte": {
+			"types": "./dist/components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte.d.ts",
+			"svelte": "./dist/components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte",
+			"default": "./dist/components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte"
+		},
+		"./schemaorg/sitenavigationelements": {
+			"types": "./dist/components/schemaorg/sitenavigationelements/index.d.ts",
+			"svelte": "./dist/components/schemaorg/sitenavigationelements/index.js",
+			"default": "./dist/components/schemaorg/sitenavigationelements/index.js"
+		},
+		"./schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte": {
+			"types": "./dist/components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte.d.ts",
+			"svelte": "./dist/components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte",
+			"default": "./dist/components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte"
+		},
+		"./schemaorg/webpage": {
+			"types": "./dist/components/schemaorg/webpage/index.d.ts",
+			"svelte": "./dist/components/schemaorg/webpage/index.js",
+			"default": "./dist/components/schemaorg/webpage/index.js"
+		},
+		"./schemaorg/webpage/JsonLdWebPage.svelte": {
+			"types": "./dist/components/schemaorg/webpage/JsonLdWebPage.svelte.d.ts",
+			"svelte": "./dist/components/schemaorg/webpage/JsonLdWebPage.svelte",
+			"default": "./dist/components/schemaorg/webpage/JsonLdWebPage.svelte"
+		},
+		"./schemaorg/website": {
+			"types": "./dist/components/schemaorg/website/index.d.ts",
+			"svelte": "./dist/components/schemaorg/website/index.js",
+			"default": "./dist/components/schemaorg/website/index.js"
+		},
+		"./schemaorg/website/JsonLdWebSite.svelte": {
+			"types": "./dist/components/schemaorg/website/JsonLdWebSite.svelte.d.ts",
+			"svelte": "./dist/components/schemaorg/website/JsonLdWebSite.svelte",
+			"default": "./dist/components/schemaorg/website/JsonLdWebSite.svelte"
+		},
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./types": {
+			"types": "./dist/types.d.ts",
+			"default": "./dist/types.js"
+		}
+	},
+	"main": "./dist/index.js",
+	"svelte": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"typesVersions": {
+		">4.0": {
+			"metadata": [
+				"./dist/components/metadata/index.d.ts"
+			],
+			"metadata/PageMetaTags.svelte": [
+				"./dist/components/metadata/PageMetaTags.svelte.d.ts"
+			],
+			"metadata/opengraph": [
+				"./dist/components/metadata/opengraph/index.d.ts"
+			],
+			"metadata/opengraph/OpenGraph.svelte": [
+				"./dist/components/metadata/opengraph/OpenGraph.svelte.d.ts"
+			],
+			"metadata/twittercard": [
+				"./dist/components/metadata/twittercard/index.d.ts"
+			],
+			"metadata/twittercard/TwitterCard.svelte": [
+				"./dist/components/metadata/twittercard/TwitterCard.svelte.d.ts"
+			],
+			"schemaorg": [
+				"./dist/components/schemaorg/index.d.ts"
+			],
+			"schemaorg/breadcrumbs": [
+				"./dist/components/schemaorg/breadcrumbs/index.d.ts"
+			],
+			"schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte": [
+				"./dist/components/schemaorg/breadcrumbs/JsonLdBreadcrumbs.svelte.d.ts"
+			],
+			"schemaorg/sitenavigationelements": [
+				"./dist/components/schemaorg/sitenavigationelements/index.d.ts"
+			],
+			"schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte": [
+				"./dist/components/schemaorg/sitenavigationelements/JsonLdSiteNavigationElements.svelte.d.ts"
+			],
+			"schemaorg/webpage": [
+				"./dist/components/schemaorg/webpage/index.d.ts"
+			],
+			"schemaorg/webpage/JsonLdWebPage.svelte": [
+				"./dist/components/schemaorg/webpage/JsonLdWebPage.svelte.d.ts"
+			],
+			"schemaorg/website": [
+				"./dist/components/schemaorg/website/index.d.ts"
+			],
+			"schemaorg/website/JsonLdWebSite.svelte": [
+				"./dist/components/schemaorg/website/JsonLdWebSite.svelte.d.ts"
+			],
+			"index": [
+				"./dist/index.d.ts"
+			],
+			"types": [
+				"./dist/types.d.ts"
+			]
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*",
+		"!dist/**/*.md"
+	],
+	"scripts": {
+		"build": "pnpm clean && vite build && pnpm prepack",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"clean": "rimraf dist",
+		"dev": "pnpm sync && vite dev",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"prepare": "node .husky/install.mjs",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest --watch"
+	},
+	"dependencies": {
+		"schema-dts": "^1.1.5"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"@eslint/compat": "^1.2.8",
+		"@eslint/js": "^9.23.0",
+		"@hyperse/vitest-coverage-reporter": "^1.0.15",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.20.3",
+		"@sveltejs/package": "^2.3.10",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/svelte": "^5.2.7",
+		"@types/node": "22.14.0",
+		"@typescript-eslint/eslint-plugin": "^8.29.0",
+		"@typescript-eslint/parser": "^8.29.0",
+		"@vitest/coverage-v8": "^3.1.1",
+		"eslint": "^9.23.0",
+		"eslint-config-prettier": "^10.1.1",
+		"eslint-plugin-svelte": "^3.5.0",
+		"globals": "^16.0.0",
+		"husky": "^9.1.7",
+		"jsdom": "^26.0.0",
+		"lint-staged": "^15.5.0",
+		"prettier": "^3.5.3",
+		"prettier-plugin-packagejson": "2.5.10",
+		"prettier-plugin-svelte": "^3.3.3",
+		"publint": "^0.3.10",
+		"rimraf": "^6.0.1",
+		"svelte-check": "^4.1.5",
+		"svelte-preprocess": "^6.0.3",
+		"tslib": "^2.8.1",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.29.0",
+		"vite": "^6.2.5",
+		"vitest": "^3.1.1"
+	},
+	"peerDependencies": {
+		"schema-dts": "^1.1.5",
+		"svelte": "^5.0.0"
+	},
+	"packageManager": "pnpm@10.7.1",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	}
+}
