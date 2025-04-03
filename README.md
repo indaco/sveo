@@ -114,22 +114,53 @@ You can use any SEO component inside your route files or layout components. Here
 </script>
 
 <PageMetaTags
-  title="My Svelte App"
-  description="This is a SvelteKit site using sveo for SEO."
-  canonical="https://example.com"
-/>
-
-<TwitterCard
-  card="summary_large_image"
-  site="@indaco"
-  title="My Svelte App"
-  description="Built with SvelteKit and sveo."
-  image="https://example.com/image.jpg"
+  data={{
+    title: 'My Svelte App',
+    url: 'https://example.com',
+    description: 'This is a SvelteKit site using sveo for SEO.',
+    keywords: ['svelte', 'seo', 'sveo'],
+    opengraph: {
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@indaco',
+      image: {
+        url: 'https://example.com/image.jpg',
+        alt: 'Banner of My Svelte App'
+      }
+    }
+  }}
 />
 
 <JsonLdWebSite
-  name="My Svelte App"
-  url="https://example.com"
+  data={{
+    name: 'My Svelte App',
+    baseURL: 'https://example.com',
+    description: 'This is a SvelteKit site using sveo for SEO.',
+    language: 'en',
+    socials: {
+      twitter: 'https://twitter.com/indaco',
+      github: 'https://github.com/indaco'
+    }
+  }}
+
+<TwitterCard
+  data={{
+    type: TwitterCardType.SummaryLargeImage,
+    site: '@indaco',
+    player: {
+      url: 'https://example.com/embed/player.html',
+      width: 640,
+      height: 360
+    },
+    app: {
+      country: 'US',
+      idIPhone: '123456789',
+      idIPad: '987654321',
+      idGooglePlay: 'com.example.app'
+    }
+  }}
 />
 ```
 
