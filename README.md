@@ -6,6 +6,9 @@
   <a href="https://github.com/indaco/sveo/actions/workflows/ci.yml" target="_blank">
     <img src="https://github.com/indaco/sveo/actions/workflows/ci.yml/badge.svg" alt="CI" />
   </a>
+  <a href="https://codecov.io/gh/indaco/sveo">
+    <img src="https://codecov.io/gh/indaco/sveo/branch/main/graph/badge.svg" alt="Codecov" />
+  </a>
   <a href="https://www.npmjs.com/package/@indaco/sveo" target="_blank">
     <img src="https://img.shields.io/npm/v/@indaco/sveo.svg?style=flat-square" alt="npm version" />
   </a>
