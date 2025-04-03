@@ -58,17 +58,9 @@ The `JsonLdSiteNavigationElement` component exposes the following properties:
 | Property | Type                 | Required |
 | :------- | :------------------: | :------: |
 | baseURL  | `string`             | yes      |
-| data     | `Array<SEOMenuItem>` | yes      |
+| data     | [Array<SEOMenuItem>] | yes      |
 
-```typescript
-type SEOMenuItem = {
-    identifier: string;
-    name: string;
-    url: string;
-    weight: number;
-    external?: boolean;
-    children?: Array<SEOMenuItem>;
-}
-```
+<!-- Resource Links -->
 
+[Array<SEOMenuItem>]: https://github.com/indaco/sveo/blob/06de4d7c79a27f0474981cce3ebc2cf922484b09/src/lib/types.ts#L20-L27
 [SiteNavigationElement]: https://schema.org/SiteNavigationElement

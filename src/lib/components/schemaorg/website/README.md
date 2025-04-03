@@ -79,23 +79,9 @@ The `JsonLdWebPage` component exposes the following properties:
 
 | Property | Type         | Required |
 | :------- | :----------: | :------: |
-| data     | `SEOWebPage` | yes      |
+| data     | [SEOWebSite] | yes      |
 
-```typescript
-type SEOWebSite = {
-    name: string;
-    baseURL: string;
-    language: string;
-    title: string;
-    description: string;
-    favicon?: string;
-    logo?: string;
-    copyright?: string;
-    keywords?: Array<string>;
-    contactEmail?: string;
-    socials?: Socials;
-    creator?: SEOPerson | SEOOrganization;
-};
-```
+<!-- Resource Links -->
 
+[SEOWebSite]: https://github.com/indaco/sveo/blob/06de4d7c79a27f0474981cce3ebc2cf922484b09/src/lib/types.ts#L1-L14
 [WebSite]: https://schema.org/WebSite
