@@ -16,7 +16,8 @@ export const isSEOPerson = (contact: SEOContact): contact is SEOPerson =>
 
 export function toISODateString(date: string | Date | undefined | null): string | undefined {
 	if (!date) return undefined;
-	return date instanceof Date ? date.toISOString() : date;
+	const d = typeof date === 'string' ? new Date(date) : date;
+	return d instanceof Date && !isNaN(d.getTime()) ? d.toISOString() : undefined;
 }
 
 export function pathSegments(url: string): string[] {

@@ -57,14 +57,18 @@ describe('toISODateString', () => {
 		expect(toISODateString(null)).toBeUndefined();
 	});
 
-	it('should return the same string if a string is passed', () => {
+	it('should convert a valid date string to an ISO string', () => {
 		const input = '2023-01-01';
-		expect(toISODateString(input)).toBe('2023-01-01');
+		expect(toISODateString(input)).toBe('2023-01-01T00:00:00.000Z');
 	});
 
 	it('should convert a Date object to an ISO string', () => {
 		const date = new Date('2023-01-01T00:00:00Z');
 		expect(toISODateString(date)).toBe('2023-01-01T00:00:00.000Z');
+	});
+
+	it('should return undefined for an invalid date string', () => {
+		expect(toISODateString('not-a-date')).toBeUndefined();
 	});
 });
 

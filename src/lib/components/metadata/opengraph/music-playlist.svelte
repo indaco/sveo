@@ -12,12 +12,12 @@
 	<meta property="music:song" content={data.opengraph.playlist.song.url} />
 {/if}
 
-{#if data.opengraph?.playlist?.disc}
-	<meta property="music:song:disc" content={data.opengraph.playlist.disc.toString()} />
+{#if data.opengraph?.playlist?.song?.disc}
+	<meta property="music:song:disc" content={data.opengraph.playlist.song.disc.toString()} />
 {/if}
 
-{#if data.opengraph?.playlist?.track}
-	<meta property="music:song:track" content={data.opengraph.playlist.track.toString()} />
+{#if data.opengraph?.playlist?.song?.track}
+	<meta property="music:song:track" content={data.opengraph.playlist.song.track.toString()} />
 {/if}
 
 {#if data.opengraph?.playlist?.creator}

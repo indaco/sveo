@@ -1,7 +1,7 @@
 import { OpenGraphType, TwitterCardType } from '$lib/types.js';
 import type { SEOWebPage, SEOMenuItem, SEOWebSite } from '$lib/types.js';
 
-const website: SEOWebSite = {
+export const website: SEOWebSite = {
 	name: 'example.com',
 	baseURL: 'https://example.com',
 	language: 'en-GB',
@@ -28,7 +28,7 @@ const website: SEOWebSite = {
 	}
 };
 
-const homePage: SEOWebPage = {
+export const homePage: SEOWebPage = {
 	url: website.baseURL,
 	title: 'Home Page',
 	description: 'This is the description for the Home Page',
@@ -41,7 +41,7 @@ const homePage: SEOWebPage = {
 	}
 };
 
-const sampleArticle: SEOWebPage = {
+export const sampleArticle: SEOWebPage = {
 	url: website.baseURL + '/posts/getting-started',
 	title: 'Getting Started Article',
 	description: 'This is the description for the Getting Started Article',
@@ -61,7 +61,7 @@ const sampleArticle: SEOWebPage = {
 	}
 };
 
-const menu: Array<SEOMenuItem> = [
+export const menu: Array<SEOMenuItem> = [
 	{
 		identifier: 'home',
 		name: 'Home',
@@ -82,5 +82,3 @@ const menu: Array<SEOMenuItem> = [
 		external: true
 	}
 ];
-
-export { website, homePage, sampleArticle, menu };
