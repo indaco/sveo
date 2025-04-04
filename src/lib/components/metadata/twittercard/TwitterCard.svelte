@@ -28,8 +28,8 @@
 
 		{#if data.twitter.type === TwitterCardType.Player && data.twitter.player}
 			<meta property="twitter:player" content={data.twitter.player.url} />
-			<meta property="twitter:player:width" content={data.twitter.player.width} />
-			<meta property="twitter:player:height" content={data.twitter.player.height} />
+			<meta property="twitter:player:width" content={data.twitter.player.width.toString()} />
+			<meta property="twitter:player:height" content={data.twitter.player.height.toString()} />
 		{/if}
 
 		{#if data.twitter.type === TwitterCardType.App && data.twitter.app}

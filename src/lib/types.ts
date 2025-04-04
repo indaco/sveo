@@ -255,7 +255,7 @@ export const TwitterCardType: typeof EnumTwitterCardType = {
  * @param app (optional) A Card with a direct download to a mobile app
  */
 export type TwitterCard = {
-	type: string;
+	type: EnumTwitterCardType;
 	site?: string;
 	player?: TwitterPlayer;
 	app?: TwitterApp;
@@ -271,8 +271,8 @@ export type TwitterCard = {
  */
 export type TwitterPlayer = {
 	url: string; // HTTPS URL to iFrame player.
-	width: string; // Width of iFrame specified in twitter:player in pixels
-	height: string; // Height of iFrame specified in twitter:player in pixels
+	width: number; // Width of iFrame specified in twitter:player in pixels
+	height: number; // Height of iFrame specified in twitter:player in pixels
 };
 
 /**
