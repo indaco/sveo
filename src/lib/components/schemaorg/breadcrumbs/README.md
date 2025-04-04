@@ -1,8 +1,8 @@
 # JsonLdBreadcrumbs
 
-`JsonLdBreadcrumbs` component adds a [breadcrumb] schema.org property to the page header, a set of links (_BreadcrumbList_) that can help a user understand and navigate a website hierarchy.
+The `JsonLdBreadcrumbs` component adds a [BreadcrumbList] to the page header as [structured data]. This helps search engines understand the page's position within the site hierarchy and enhances rich results in search listings.
 
-A [BreadcrumbList] is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.
+A `BreadcrumbList` is an [ItemList] consisting of a chain of linked web pages, typically ending with the current page.
 
 ## Usage
 
@@ -14,7 +14,7 @@ A [BreadcrumbList] is an ItemList consisting of a chain of linked Web pages, typ
 </script>
 ```
 
-**Output**
+### Output
 
 ```html
 <script type="application/ld+json">{
@@ -44,7 +44,7 @@ A [BreadcrumbList] is an ItemList consisting of a chain of linked Web pages, typ
 
 ```
 
-### SvelteKit Example
+### With SvelteKit
 
 ```html
 <script>
@@ -57,11 +57,10 @@ A [BreadcrumbList] is an ItemList consisting of a chain of linked Web pages, typ
 
 ## Properties
 
-The `JsonLdBreadcrumbs` component exposes the following properties:
+| Property  | Type     | Required | Description                      |
+| :-------- | :------: | :------: | :------------------------------- |
+| url       | `string` |    yes   | Absolute URL of the current page |
 
-| Property  | Type     | Required |
-| :-------- | :------: | :------: |
-| url       | `string` |    yes   |
-
-[breadcrumb]: https://schema.org/breadcrumb
+[structured data]: https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
 [BreadcrumbList]: https://schema.org/BreadcrumbList
+[ItemList]: https://schema.org/ItemList

@@ -1,6 +1,6 @@
 # JsonLdSiteNavigationElement
 
-`JsonLdSiteNavigationElement` component adds a [SiteNavigationElement] schema.org type to the page header, a navigation element of the page.
+The `JsonLdSiteNavigationElement` component injects a [SiteNavigationElement] from Schema.org into the page as a `<script type="application/ld+json">` tag, describing the structure of the site's main navigation menu for search engines.
 
 ## Usage
 
@@ -28,7 +28,7 @@
 </script>
 ```
 
-**Output**
+### Output
 
 ```html
 <script type="application/ld+json">{
@@ -53,14 +53,12 @@
 
 ## Properties
 
-The `JsonLdSiteNavigationElement` component exposes the following properties:
-
-| Property | Type                 | Required |
-| :------- | :------------------: | :------: |
-| baseURL  | `string`             | yes      |
-| data     | [Array<SEOMenuItem>] | yes      |
+| Property | Type              | Required | Description                                  |
+| :------- | :---------------: | :------: | :------------------------------------------- |
+| baseURL  | `string`          | yes      | Base URL to prefix relative paths            |
+| data     | [SEOMenuItem]`[]` | yes      | Array of menu items to include in the schema |
 
 <!-- Resource Links -->
 
-[Array<SEOMenuItem>]: https://github.com/indaco/sveo/blob/06de4d7c79a27f0474981cce3ebc2cf922484b09/src/lib/types.ts#L20-L27
+[SEOMenuItem]: https://github.com/indaco/sveo/blob/06de4d7c79a27f0474981cce3ebc2cf922484b09/src/lib/types.ts#L20-L27
 [SiteNavigationElement]: https://schema.org/SiteNavigationElement

@@ -8,31 +8,31 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
 
 ```html
 <script lang="ts">
-    import type { SEOWebPageMetadata } from '@indaco/sveo/types';
+    import type { SEOWebPage } from '@indaco/sveo/types';
     import { OpenGraphType, TwitterCardType } from '@indaco/sveo/types';
     import { PageMetaTags } from '@indaco/sveo/metadata';
 
-    const sampleArticle: SEOWebPageMetadata = {
+    const samplePage: SEOWebPage = {
         url: 'https://example.com/posts/getting-started',
         title: 'Getting Started Article',
         description: 'This is the description for the Getting Started Article',
         author: 'Your Name',
-        keywords: ['sveltekit', 'components', 'tests', 'jest'],
+        keywords: ['sveltekit', 'components', 'tests', 'vitest'],
         opengraph: {
             type: OpenGraphType.Article,
             article: {
-                published_at: new Date('23-01-2022'),
-                modified_at: new Date('24-01-2022')
+                published_time: '23-01-2022',
+                modified_time: '24-01-2022'
             }
         },
         twitter: {
             type: TwitterCardType.Large,
             site: '@username'
         }
-};
+    };
 <script>
 
-<PageMetaTags data={sampleArticle} />
+<PageMetaTags data={samplePage} />
 ```
 
 ### Music Album Example
@@ -77,8 +77,6 @@ Easily add metadata (title, canonical url, description, keywords) to your pages 
 ## Properties
 
 ### PageMetags
-
-The `PageMetatags` component exposes the following properties:
 
 | Prop   | Type         | Required | Description                                |
 | :----- | :----------: | :------: | :----------------------------------------- |

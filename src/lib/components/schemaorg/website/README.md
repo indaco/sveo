@@ -1,6 +1,6 @@
 # JsonLdWebSite
 
-`JsonLdWebSite` component adds a [WebSite] schema.org type to the page header, a navigation element of the page.
+The `JsonLdWebSite` component adds a [WebSite] Schema.org type to the page in a `<script type="application/ld+json">` tag. It represents metadata about the entire website, such as its name, description, language, license, social links, and creator information.
 
 ## Usage
 
@@ -40,7 +40,7 @@
 </script>
 ```
 
-**Output**
+### Output
 
 ```html
 <script type="application/ld+json" data-testid="jsonld-website">{
@@ -75,11 +75,9 @@
 
 ## Properties
 
-The `JsonLdWebPage` component exposes the following properties:
-
-| Property | Type         | Required |
-| :------- | :----------: | :------: |
-| data     | [SEOWebSite] | yes      |
+| Property | Type         | Required | Description                              |
+| :------- | :----------: | :------: | :--------------------------------------- |
+| data     | [SEOWebSite] | yes      | Object representing the website metadata |
 
 <!-- Resource Links -->
 

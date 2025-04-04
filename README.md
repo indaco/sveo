@@ -74,6 +74,8 @@ Available types:
 
 Each component renders relevant `<meta property="og:*">` tags automatically based on the data you provide.
 
+[Learn how to use the OpenGraph component](src/lib/components/metadata/opengraph/README.md)
+
 #### TwitterCard
 
 A flexible component that generates meta tags for [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) using a single prop: `data`, typed as `SEOWebPage`.
@@ -87,7 +89,7 @@ It supports all official Twitter Card types:
 
 The component automatically renders conditional tags based on the selected card type and the fields present in `data.twitter`.
 
-[See more](src/lib/components/metadata/twittercard/README.md)
+[Learn how to use the TwitterCard component](src/lib/components/metadata/twittercard/README.md)
 
 ### SchemaOrg (JSON-LD)
 
@@ -100,7 +102,7 @@ Each component accepts a simple, type-safe data object and renders a `<script ty
 - [JsonLdBreadcrumbs]
 - [JsonLdSiteNavigationElement]
 
-See the linked READMEs for detailed usage examples and supported properties.
+See the linked _READMEs_ for detailed usage examples and supported properties.
 
 ## Usage
 
@@ -108,6 +110,7 @@ You can use any SEO component inside your route files or layout components. Here
 
 ```svelte
 <script>
+  import type { OpenGraphType, TwitterCardType, SEOMenuItem } from '@indaco/sveo/types';
   import PageMetaTags from '@indaco/sveo/metadata/PageMetaTags.svelte'
   import TwitterCard from '@indaco/sveo/metadata/twittercard/TwitterCard.svelte';
   import JsonLdWebSite from '@indaco/sveo/schemaorg/website/JsonLdWebSite.svelte'
@@ -115,20 +118,21 @@ You can use any SEO component inside your route files or layout components. Here
 
 <PageMetaTags
   data={{
-    title: 'My Svelte App',
-    url: 'https://example.com',
-    description: 'This is a SvelteKit site using sveo for SEO.',
-    keywords: ['svelte', 'seo', 'sveo'],
+    url: 'https://example.com/posts/getting-started',
+    title: 'Getting Started Article',
+    description: 'This is the description for the Getting Started Article',
+    author: 'Your Name',
+    keywords: ['sveltekit', 'components', 'tests', 'vitest'],
     opengraph: {
-      type: 'website'
+      type: OpenGraphType.Article,
+      article: {
+        published_time: '23-01-2022',
+        modified_time: '24-01-2022'
+      }
     },
     twitter: {
-      card: 'summary_large_image',
-      site: '@indaco',
-      image: {
-        url: 'https://example.com/image.jpg',
-        alt: 'Banner of My Svelte App'
-      }
+      type: TwitterCardType.Large,
+      site: '@username'
     }
   }}
 />
@@ -137,6 +141,7 @@ You can use any SEO component inside your route files or layout components. Here
   data={{
     name: 'My Svelte App',
     baseURL: 'https://example.com',
+    title: 'Getting Started Article',
     description: 'This is a SvelteKit site using sveo for SEO.',
     language: 'en',
     socials: {
@@ -144,21 +149,47 @@ You can use any SEO component inside your route files or layout components. Here
       github: 'https://github.com/indaco'
     }
   }}
+/>
+
+<JsonLdSiteNavigationElements
+  baseURL="https://example.com"
+  data={[
+    { identifier: 'home', name: 'Home', url: '/', weight: 1 },
+    { identifier: 'about', name: 'About', url: '/about', weight: 2 },
+    {
+      identifier: 'github',
+      name: 'GitHub',
+      url: 'https://github.com/indaco',
+      weight: 3,
+      external: true
+    }
+  ] satisfies Array<SEOMenuItem>}
+/>
 
 <TwitterCard
   data={{
-    type: TwitterCardType.SummaryLargeImage,
-    site: '@indaco',
-    player: {
-      url: 'https://example.com/embed/player.html',
-      width: 640,
-      height: 360
+    url: 'https://example.com',
+    title: 'Amazing Svelte Site',
+    description: 'This site showcases the power of SvelteKit for SEO.',
+    keywords: ['svelte', 'sveltekit', 'seo'],
+    image: {
+      url: 'https://example.com/og-image.jpg',
+      alt: 'Preview of the Svelte site'
     },
-    app: {
-      country: 'US',
-      idIPhone: '123456789',
-      idIPad: '987654321',
-      idGooglePlay: 'com.example.app'
+    twitter: {
+      type: TwitterCardType.Player,
+      site: '@example',
+      player: {
+        url: 'https://example.com/player.html',
+        width: 640,
+        height: 360
+      },
+      app: {
+        country: 'US',
+        idIPhone: '1234567890',
+        idIPad: '0987654321',
+        idGooglePlay: 'com.example.app'
+      }
     }
   }}
 />

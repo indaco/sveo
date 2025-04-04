@@ -1,6 +1,6 @@
 # JsonLdWebPage
 
-`JsonLdWebPage` component adds a [WebPage] schema.org type to the page header, a navigation element of the page.
+The `JsonLdWebPage` component adds a [WebPage] Schema.org type to the page as structured data via a `<script type="application/ld+json">` tag. This helps search engines understand the page's content and metadata such as title, description, and keywords.
 
 ## Usage
 
@@ -13,7 +13,7 @@
         url: website.baseURL,
         title: 'Home Page',
         description: 'This is the description for the Home Page',
-        keywords: 'sveltekit, components, tests, jest',
+        keywords: 'sveltekit, components, tests, vitest',
         opengraph: {
             type: OpenGraphType.Website
         },
@@ -26,7 +26,7 @@
 </script>
 ```
 
-**Output**
+Output
 
 ```html
 <script type="application/ld+json">{
@@ -41,11 +41,9 @@
 
 ## Properties
 
-The `JsonLdWebPage` component exposes the following properties:
-
-| Property | Type         | Required |
-| :------- | :----------: | :------: |
-| data     | [SEOWebPage] | yes      |
+| Property | Type         | Required | Description                             |
+| :------- | :----------: | :------: | :-------------------------------------- |
+| data     | [SEOWebPage] | yes      | Web page metadata to convert to JSON-LD |
 
 <!-- Resource Links -->
 
