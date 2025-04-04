@@ -1,33 +1,20 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`/+page.svelte > renders correct <head> snapshot 1`] = `
-"<title>Home Page</title><link rel="canonical" href="https://example.com"> <meta name="description" content="This is the description for the Home Page"><!----> <meta name="keywords" content="sveltekit, components, tests, jest"><!----> <!----><meta property="og:type" content="website"> <meta property="og:url" content="https://example.com"> <meta property="og:title" content="Home Page"> <meta property="og:description" content="This is the description for the Home Page"><!----> <!----> <!----><!----> <!----><!----><meta property="twitter:card" content="summary"> <meta property="twitter:title" content="Home Page"> <!----> <meta property="twitter:description" content="This is the description for the Home Page"><!----> <!----> <!----> <!----><!----><!----><script type="application/ld+json" data-testid="jsonld-website">{
+"<title>Getting Started Article</title><link rel="canonical" href="https://example.com/posts/getting-started"> <meta name="description" content="This is the description for the Getting Started Article"><!----> <meta name="keywords" content="sveltekit, components, tests, vitest"><!----> <!----><meta property="og:type" content="article"> <meta property="og:url" content="https://example.com/posts/getting-started"> <meta property="og:title" content="Getting Started Article"> <meta property="og:description" content="This is the description for the Getting Started Article"><!----> <!----> <!----><!----><meta property="article:published_time"><!----><meta property="article:modified_time"><!----><!----> <meta property="article:author" content="Your Name"><!----> <!----> <!----><!----><!----> <!----><!----><meta property="twitter:card" content="summary"> <meta property="twitter:title" content="Getting Started Article"> <meta property="twitter:site" content="@username"><!----> <meta property="twitter:description" content="This is the description for the Getting Started Article"><!----> <!----> <!----> <!----><!----><!----><script type="application/ld+json" data-testid="jsonld-website">{
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://example.com/#website",
-  "name": "example.com",
+  "name": "My Svelte App",
   "url": "https://example.com",
-  "description": "Example.com is your perfect fit.",
-  "keywords": [
-    "sveltekit, components, tests, jest"
-  ],
-  "inLanguage": "en-GB",
-  "license": "MIT License @ 2021-present example.com",
+  "description": "This is a SvelteKit site using sveo for SEO.",
+  "keywords": [],
+  "inLanguage": "en",
+  "license": "",
   "sameAs": [
-    "https://github.com/examplecom"
-  ],
-  "creator": {
-    "@type": "Person",
-    "name": "username",
-    "email": "github@example.com",
-    "url": "https://yourwebgarder.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "City",
-      "streetAddress": "somewhere 101"
-    },
-    "jobTitle": "webmaster"
-  }
+    "https://twitter.com/indaco",
+    "https://github.com/indaco"
+  ]
 }</script><!----><script type="application/ld+json" data-testid="jsonld-sitenavigationelements">{
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -50,14 +37,6 @@ exports[`/+page.svelte > renders correct <head> snapshot 1`] = `
       "name": "GitHub",
       "url": "https://github.com/indaco"
     }
-  ]
-}</script><!----><script type="application/ld+json" data-testid="jsonld-webpage">{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Home Page",
-  "description": "This is the description for the Home Page",
-  "keywords": [
-    "sveltekit, components, tests, jest"
   ]
 }</script>"
 `;

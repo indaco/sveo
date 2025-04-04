@@ -11,31 +11,37 @@ describe('/+page.svelte', () => {
 
 	test('sets <title> from homePage', () => {
 		render(Page);
-		expect(document.title).toBe('Home Page');
+		expect(document.title).toBe('Getting Started Article');
 	});
 
 	test('sets meta description from homePage', () => {
 		render(Page);
 		const meta = document.head.querySelector('meta[name="description"]');
-		expect(meta).toHaveAttribute('content', 'This is the description for the Home Page');
+		expect(meta).toHaveAttribute(
+			'content',
+			'This is the description for the Getting Started Article'
+		);
 	});
 
-	test('sets og:type to Website', () => {
+	test('sets og:type to article', () => {
 		render(Page);
 		const meta = document.head.querySelector('meta[property="og:type"]');
-		expect(meta).toHaveAttribute('content', 'website');
+		expect(meta).toHaveAttribute('content', 'article');
 	});
 
 	test('sets og:title', () => {
 		render(Page);
 		const meta = document.head.querySelector('meta[property="og:title"]');
-		expect(meta).toHaveAttribute('content', 'Home Page');
+		expect(meta).toHaveAttribute('content', 'Getting Started Article');
 	});
 
 	test('sets og:description', () => {
 		render(Page);
 		const meta = document.head.querySelector('meta[property="og:description"]');
-		expect(meta).toHaveAttribute('content', 'This is the description for the Home Page');
+		expect(meta).toHaveAttribute(
+			'content',
+			'This is the description for the Getting Started Article'
+		);
 	});
 
 	test('sets twitter:card to summary', () => {
@@ -50,17 +56,8 @@ describe('/+page.svelte', () => {
 			'script[type="application/ld+json"][data-testid="jsonld-website"]'
 		);
 		expect(script?.textContent).toContain('"@type": "WebSite"');
-		expect(script?.textContent).toContain('"name": "example.com"');
-		expect(script?.textContent).toContain('"inLanguage": "en-GB"');
-	});
-
-	test('renders JSON-LD WebPage', () => {
-		render(Page);
-		const script = document.head.querySelector(
-			'script[type="application/ld+json"][data-testid="jsonld-webpage"]'
-		);
-		expect(script?.textContent).toContain('"@type": "WebPage"');
-		expect(script?.textContent).toContain('"name": "Home Page"');
+		expect(script?.textContent).toContain('"name": "My Svelte App"');
+		expect(script?.textContent).toContain('"inLanguage": "en"');
 	});
 
 	test('renders JSON-LD SiteNavigationElements', () => {

@@ -53,7 +53,7 @@ describe('PageMetaTags - Article', () => {
 
 	it('should have meta props to HTML markup', async () => {
 		expect(getMeta('description')).toBe('This is the description for the Getting Started Article');
-		expect(getMeta('keywords')).toBe('sveltekit, components, tests, jest');
+		expect(getMeta('keywords')).toBe('sveltekit, components, tests, vitest');
 	});
 
 	it('should have meta for OpenGraph', async () => {
