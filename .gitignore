@@ -88,3 +88,5 @@ $RECYCLE.BIN/
 coverage/
 
 vite.config.js.timestamp-*
+
+test_results/.last-run.json

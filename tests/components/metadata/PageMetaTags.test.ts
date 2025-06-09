@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
 import { describe, it, expect, beforeEach } from 'vitest';
-import { render } from '@testing-library/svelte/svelte5';
+import { render } from 'vitest-browser-svelte';
 import { sampleArticle } from '../../fixtures/sample.js';
 import { PageMetaTags } from '../../../src/lib/index.js';
 

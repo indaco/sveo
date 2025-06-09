@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/svelte/svelte5';
+import { render } from 'vitest-browser-svelte';
 import { OpenGraph } from '../../../../src/lib/components/metadata/opengraph/index.js';
 import type { SEOWebPage } from '../../../../src/lib/types';
 import { OpenGraphType } from '../../../../src/lib/types';

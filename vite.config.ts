@@ -1,4 +1,3 @@
-import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
@@ -10,18 +9,23 @@ export default defineConfig({
 		coverage: {
 			enabled: true,
 			provider: 'v8',
-			reporter: ['text', 'lcov']
+			reporter: ['text', 'lcov'],
+			include: ['src/**/*.{ts,svelte}']
 		},
 		reporters: process.env.GITHUB_ACTIONS ? ['dot', 'github-actions'] : ['dot'],
-		workspace: [
+		projects: [
 			{
 				extends: './vite.config.ts',
-				plugins: [svelteTesting()],
 				test: {
 					name: 'client',
-					environment: 'jsdom',
-					clearMocks: true,
-					include: ['tests/**/*.svelte.test.ts', 'tests/**/*.test.ts']
+					environment: 'browser',
+					browser: {
+						enabled: true,
+						provider: 'playwright',
+						instances: [{ browser: 'chromium' }]
+					},
+					include: ['tests/**/*.svelte.test.ts', 'tests/**/*.test.ts'],
+					setupFiles: ['./vitest-setup-client.ts']
 				}
 			}
 		]

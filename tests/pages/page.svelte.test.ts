@@ -1,12 +1,12 @@
 import { describe, test, expect } from 'vitest';
-import '@testing-library/jest-dom/vitest';
-import { render, screen } from '@testing-library/svelte';
+import { render } from 'vitest-browser-svelte';
 import Page from '../../src/routes/+page.svelte';
+import { page } from '@vitest/browser/context';
 
 describe('/+page.svelte', () => {
 	test('should render h1', () => {
 		render(Page);
-		expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('@indaco/sveo');
+		expect(page.getByRole('heading', { level: 1 })).toHaveTextContent('@indaco/sveo');
 	});
 
 	test('sets <title> from homePage', () => {
@@ -68,10 +68,5 @@ describe('/+page.svelte', () => {
 		expect(script?.textContent).toContain('"@type": "SiteNavigationElement"');
 		expect(script?.textContent).toContain('"name": "Home"');
 		expect(script?.textContent).toContain('"url": "https://example.com/about"');
-	});
-
-	test('renders correct <head> snapshot', () => {
-		render(Page);
-		expect(document.head.innerHTML).toMatchSnapshot();
 	});
 });

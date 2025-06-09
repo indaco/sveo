@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom';
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/svelte/svelte5';
+import { render } from 'vitest-browser-svelte';
 import { website } from '../../fixtures/sample.js';
 import { JsonLdBreadcrumbs } from '../../../src/lib/index.js';
 
