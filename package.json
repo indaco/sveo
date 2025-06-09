@@ -205,7 +205,7 @@
 		"@sveltejs/kit": "^2.21.3",
 		"@sveltejs/package": "^2.3.11",
 		"@sveltejs/vite-plugin-svelte": "^5.1.0",
-		"@types/node": "22.14.0",
+		"@types/node": "22.15.30",
 		"@typescript-eslint/eslint-plugin": "^8.33.1",
 		"@typescript-eslint/parser": "^8.33.1",
 		"@vitest/browser": "^3.2.3",
