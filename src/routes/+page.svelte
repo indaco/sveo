@@ -1,8 +1,8 @@
 <script lang="ts">
 	import TwitterCard from '$lib/components/metadata/twittercard/TwitterCard.svelte';
 	import { JsonLdSiteNavigationElements, JsonLdWebSite, PageMetaTags } from '$lib/index.js';
-	import { OpenGraphType, TwitterCardType } from '$lib/types.js';
 	import type { SEOMenuItem } from '$lib/types.js';
+	import { OpenGraphType, TwitterCardType } from '$lib/types.js';
 </script>
 
 <!-- BEGIN OF USAGE NOTE: do not need to put into svelte:head -->
@@ -81,7 +81,7 @@
 			weight: 3,
 			external: true
 		}
-	] satisfies Array<SEOMenuItem>}
+	] satisfies SEOMenuItem[]}
 />
 <!-- END OF USAGE NOTE -->
 

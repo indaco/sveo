@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import Page from '../../src/routes/+page.svelte';
-import { page } from '@vitest/browser/context';
+import { page } from 'vitest/browser';
 
 describe('/+page.svelte', () => {
 	test('should render h1', () => {
