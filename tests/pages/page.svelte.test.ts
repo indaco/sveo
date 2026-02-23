@@ -46,7 +46,7 @@ describe('/+page.svelte', () => {
 
 	test('sets twitter:card to summary', () => {
 		render(Page);
-		const meta = document.head.querySelector('meta[property="twitter:card"]');
+		const meta = document.head.querySelector('meta[name="twitter:card"]');
 		expect(meta).toHaveAttribute('content', 'summary');
 	});
 

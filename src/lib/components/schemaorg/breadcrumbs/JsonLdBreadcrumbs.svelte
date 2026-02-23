@@ -8,31 +8,33 @@
 
 	let { url }: Props = $props();
 
-	const baseURL = new URL(url).origin;
-	const segments = pathSegments(url);
+	const schemaOrgBreadcrumbList: WithContext<BreadcrumbList> = $derived.by(() => {
+		const baseURL = new URL(url).origin;
+		const segments = pathSegments(url);
 
-	const itemListElement: ListItem[] = [
-		{
-			'@type': 'ListItem',
-			position: 1,
-			name: 'Home',
-			url: baseURL
-		},
-		...segments.map((segment, index) => {
-			return {
+		const itemListElement: ListItem[] = [
+			{
 				'@type': 'ListItem',
-				position: index + 2,
-				name: segment,
-				url: `${baseURL}/${segments.slice(0, index + 1).join('/')}`
-			} as const;
-		})
-	];
+				position: 1,
+				name: 'Home',
+				url: baseURL
+			},
+			...segments.map((segment, index) => {
+				return {
+					'@type': 'ListItem',
+					position: index + 2,
+					name: segment,
+					url: `${baseURL}/${segments.slice(0, index + 1).join('/')}`
+				} as const;
+			})
+		];
 
-	const schemaOrgBreadcrumbList: WithContext<BreadcrumbList> = {
-		'@context': 'https://schema.org',
-		'@type': 'BreadcrumbList',
-		itemListElement
-	};
+		return {
+			'@context': 'https://schema.org',
+			'@type': 'BreadcrumbList',
+			itemListElement
+		};
+	});
 </script>
 
 <svelte:head>

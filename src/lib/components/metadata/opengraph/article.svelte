@@ -8,11 +8,11 @@
 
 	let { data }: Props = $props();
 
-	const times = [
+	const times = $derived([
 		['published_time', data.opengraph?.article?.published_time],
 		['modified_time', data.opengraph?.article?.modified_time],
 		['expiration_time', data.opengraph?.article?.expiration_time]
-	] as const;
+	] as const);
 </script>
 
 {#each times as [key, value] (key)}

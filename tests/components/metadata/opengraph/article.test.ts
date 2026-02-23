@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { sampleArticle } from '../../../fixtures/sample.js';
 import { OpenGraph } from '../../../../src/lib/components/metadata/opengraph/index.js';
+import { OpenGraphType } from '../../../../src/lib/types.js';
 import { getMeta } from '../../../testutils.js';
 
 describe('OpenGraph - Article', () => {
@@ -38,7 +39,7 @@ describe('OpenGraph - Article', () => {
 			title: 'Minimal Article',
 			description: 'Just expiration',
 			opengraph: {
-				type: 'article',
+				type: OpenGraphType.Article,
 				article: {
 					expiration_time: new Date('2025-12-31')
 				}
@@ -57,7 +58,7 @@ describe('OpenGraph - Article', () => {
 			title: 'String Date Article',
 			description: 'Only published_time as string',
 			opengraph: {
-				type: 'article',
+				type: OpenGraphType.Article,
 				article: {
 					published_time: '2023-08-15'
 				}
@@ -76,7 +77,7 @@ describe('OpenGraph - Article', () => {
 			title: 'Only Modified',
 			description: 'Modified time only',
 			opengraph: {
-				type: 'article',
+				type: OpenGraphType.Article,
 				article: {
 					modified_time: '2024-10-10T12:30:00.000Z'
 				}

@@ -120,7 +120,9 @@ export const OpenGraphType: typeof EnumOpenGraphType = {
 };
 
 export type OpenGraph = {
-	type: string;
+	type: EnumOpenGraphType;
+	locale?: string;
+	site_name?: string;
 	article?: OpenGraphArticle;
 	book?: OpenGraphBook;
 	business?: OpenGraphBusiness;
@@ -156,7 +158,7 @@ export type OpenGraphBusiness = {
 	street_address?: string;
 	city?: string;
 	state?: string;
-	postal_code?: number;
+	postal_code?: string;
 	country?: string;
 };
 
@@ -202,6 +204,7 @@ export type OpenGraphMusicRadioStation = {
 };
 
 type OpenGraphVideo = {
+	url?: string;
 	actor?: Array<OpenGraphProfile>;
 	actorRole?: string;
 	director?: Array<OpenGraphProfile>;

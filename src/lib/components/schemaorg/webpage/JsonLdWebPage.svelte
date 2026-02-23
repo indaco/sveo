@@ -9,15 +9,19 @@
 
 	let { data }: Props = $props();
 
-	const schemaOrgWebPage: WithContext<WebPage> = $state({
-		'@context': 'https://schema.org',
-		'@type': 'WebPage',
-		name: data.title,
-		description: data.description || ''
-	});
+	const schemaOrgWebPage: WithContext<WebPage> = $derived.by(() => {
+		const page: WithContext<WebPage> = {
+			'@context': 'https://schema.org',
+			'@type': 'WebPage',
+			name: data.title,
+			description: data.description || ''
+		};
 
-	if (data.author) schemaOrgWebPage.author = data.author;
-	if (data.keywords?.length) schemaOrgWebPage.keywords = data.keywords;
+		if (data.author) page.author = data.author;
+		if (data.keywords?.length) page.keywords = data.keywords;
+
+		return page;
+	});
 </script>
 
 <svelte:head>
