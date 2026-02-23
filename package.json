@@ -1,6 +1,6 @@
 {
 	"name": "@indaco/sveo",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"private": false,
 	"description": "SEO made simple for Svelte & SvelteKit.",
 	"keywords": [
