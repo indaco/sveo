@@ -120,7 +120,9 @@ export const OpenGraphType: typeof EnumOpenGraphType = {
 };
 
 export type OpenGraph = {
-	type: string;
+	type: EnumOpenGraphType;
+	locale?: string;
+	site_name?: string;
 	article?: OpenGraphArticle;
 	book?: OpenGraphBook;
 	business?: OpenGraphBusiness;

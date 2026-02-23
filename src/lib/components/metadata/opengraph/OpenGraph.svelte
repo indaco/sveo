@@ -28,6 +28,13 @@
 		<meta property="og:description" content={data.description} />
 	{/if}
 
+	{#if data.opengraph.locale}
+		<meta property="og:locale" content={data.opengraph.locale} />
+	{/if}
+	{#if data.opengraph.site_name}
+		<meta property="og:site_name" content={data.opengraph.site_name} />
+	{/if}
+
 	{#if data.image?.url}
 		<meta property="og:image" content={data.image.url} />
 		{#if data.image.alt}
