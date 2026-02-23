@@ -21,6 +21,7 @@ const baseData: SEOWebPage = {
 			release_date: '2023-11-01T00:00:00Z',
 			tags: ['sci-fi', 'space'],
 			series: {
+				url: 'https://example.com/series/interstellar',
 				actor: [],
 				director: [],
 				writer: [],
@@ -48,5 +49,7 @@ describe('OpenGraph - VideoEpisode', () => {
 		expect(getMeta('video:release_date')).toBe('2023-11-01T00:00:00.000Z');
 
 		expect(getMetaAll('video:tag')).toEqual(['sci-fi', 'space']);
+
+		expect(getMeta('video:series')).toBe('https://example.com/series/interstellar');
 	});
 });

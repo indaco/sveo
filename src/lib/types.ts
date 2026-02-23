@@ -202,6 +202,7 @@ export type OpenGraphMusicRadioStation = {
 };
 
 type OpenGraphVideo = {
+	url?: string;
 	actor?: Array<OpenGraphProfile>;
 	actorRole?: string;
 	director?: Array<OpenGraphProfile>;

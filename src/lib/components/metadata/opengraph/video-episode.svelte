@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { toISODateString } from '$lib/utils.js';
 	import type { SEOWebPage } from '../../../types.js';
-	import VideoMovie from './video-movie.svelte';
 
 	interface Props {
 		data: SEOWebPage;
@@ -49,6 +48,6 @@
 	{/each}
 {/if}
 
-{#if data.opengraph?.episode?.series}
-	<VideoMovie {data} />
+{#if data.opengraph?.episode?.series?.url}
+	<meta property="video:series" content={data.opengraph.episode.series.url} />
 {/if}
