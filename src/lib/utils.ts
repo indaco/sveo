@@ -23,6 +23,6 @@ export function pathSegments(url: string): string[] {
 		const pathname = new URL(url).pathname;
 		return pathname.split('/').filter((part) => part.trim() !== '');
 	} catch (error) {
-		throw new Error(`[pathSegments] Expected a valid URL: ${error}`);
+		throw new Error(`[pathSegments] Expected a valid URL: ${error}`, { cause: error });
 	}
 }

@@ -9,54 +9,58 @@
 
 	let { data }: Props = $props();
 
-	const schemaOrgWebSite: WithContext<WebSite> = $state({
-		'@context': 'https://schema.org',
-		'@type': 'WebSite',
-		'@id': `${data.baseURL}/#website`,
-		name: data.name,
-		url: data.baseURL,
-		description: data.description || '',
-		keywords: data.keywords || [],
-		inLanguage: data.language || '',
-		license: data.copyright || ''
-	});
-
-	if (data.socials !== undefined) {
-		const sameAs = Object.values(data.socials).filter((v) => v !== '');
-		if (sameAs.length > 0) {
-			schemaOrgWebSite.sameAs = sameAs;
-		}
-	}
-
-	if (data.creator) {
-		let _address: string | PostalAddress;
-
-		if (typeof data.creator.address === 'string') {
-			_address = data.creator.address;
-		} else {
-			_address = {
-				'@type': 'PostalAddress',
-				addressLocality: data.creator.address?.city,
-				postalCode: data.creator.address?.postalCode,
-				streetAddress: data.creator.address?.streetAddress
-			};
-		}
-
-		let _creator: Person | Organization = {
-			'@type': isSEOPerson(data.creator) ? 'Person' : 'Organization',
-			name: data.creator.name,
-			email: data.creator.email,
-			url: data.creator.url,
-			telephone: data.creator.telephone,
-			address: _address
+	const schemaOrgWebSite: WithContext<WebSite> = $derived.by(() => {
+		const site: WithContext<WebSite> = {
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			'@id': `${data.baseURL}/#website`,
+			name: data.name,
+			url: data.baseURL,
+			description: data.description || '',
+			keywords: data.keywords || [],
+			inLanguage: data.language || '',
+			license: data.copyright || ''
 		};
 
-		if (isSEOPerson(data.creator)) {
-			(_creator as Extract<Person, { '@type': 'Person' }>).jobTitle = data.creator.jobTitle;
+		if (data.socials !== undefined) {
+			const sameAs = Object.values(data.socials).filter((v) => v !== '');
+			if (sameAs.length > 0) {
+				site.sameAs = sameAs;
+			}
 		}
 
-		schemaOrgWebSite.creator = _creator;
-	}
+		if (data.creator) {
+			let _address: string | PostalAddress;
+
+			if (typeof data.creator.address === 'string') {
+				_address = data.creator.address;
+			} else {
+				_address = {
+					'@type': 'PostalAddress',
+					addressLocality: data.creator.address?.city,
+					postalCode: data.creator.address?.postalCode,
+					streetAddress: data.creator.address?.streetAddress
+				};
+			}
+
+			let _creator: Person | Organization = {
+				'@type': isSEOPerson(data.creator) ? 'Person' : 'Organization',
+				name: data.creator.name,
+				email: data.creator.email,
+				url: data.creator.url,
+				telephone: data.creator.telephone,
+				address: _address
+			};
+
+			if (isSEOPerson(data.creator)) {
+				(_creator as Extract<Person, { '@type': 'Person' }>).jobTitle = data.creator.jobTitle;
+			}
+
+			site.creator = _creator;
+		}
+
+		return site;
+	});
 </script>
 
 <svelte:head>

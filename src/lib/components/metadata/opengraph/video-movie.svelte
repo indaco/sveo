@@ -43,7 +43,7 @@
 {/if}
 
 {#if Array.isArray(data.opengraph?.movie?.tags)}
-	{@const _tags = data.opengraph?.movie?.tags}
+	{@const _tags = data.opengraph.movie.tags}
 	{#each _tags as tag (tag)}
 		<meta property="video:tag" content={tag} />
 	{/each}

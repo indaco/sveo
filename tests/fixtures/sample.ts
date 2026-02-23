@@ -10,7 +10,7 @@ export const website: SEOWebSite = {
 	description: 'Example.com is your perfect fit.',
 	favicon: 'favicon.ico',
 	copyright: 'MIT License @ 2021-present example.com',
-	keywords: ['sveltekit, components, tests, vitest'],
+	keywords: ['sveltekit', 'components', 'tests', 'vitest'],
 	contactEmail: '',
 	socials: {
 		github: 'https://github.com/examplecom'
@@ -32,7 +32,7 @@ export const homePage: SEOWebPage = {
 	url: website.baseURL,
 	title: 'Home Page',
 	description: 'This is the description for the Home Page',
-	keywords: ['sveltekit, components, tests, vitest'],
+	keywords: ['sveltekit', 'components', 'tests', 'vitest'],
 	opengraph: {
 		type: OpenGraphType.Website
 	},
@@ -46,13 +46,13 @@ export const sampleArticle: SEOWebPage = {
 	title: 'Getting Started Article',
 	description: 'This is the description for the Getting Started Article',
 	author: 'indaco',
-	keywords: ['sveltekit, components, tests, vitest'],
+	keywords: ['sveltekit', 'components', 'tests', 'vitest'],
 	opengraph: {
 		type: OpenGraphType.Article,
 		article: {
 			tags: ['sveltekit'],
-			published_time: '23-01-2022',
-			modified_time: '24-01-2022'
+			published_time: '2022-01-23',
+			modified_time: '2022-01-24'
 		}
 	},
 	twitter: {
