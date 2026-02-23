@@ -26,7 +26,7 @@
 {#if data.opengraph?.business?.postal_code}
 	<meta
 		property="business:contact_data:postal_code"
-		content={data.opengraph.business.postal_code.toString()}
+		content={data.opengraph.business.postal_code}
 	/>
 {/if}
 

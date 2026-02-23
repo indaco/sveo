@@ -13,7 +13,7 @@ const baseBusinessData: SEOWebPage = {
 			street_address: '123 Main St',
 			city: 'Metropolis',
 			state: 'NY',
-			postal_code: 12345,
+			postal_code: '12345',
 			country: 'USA'
 		}
 	}

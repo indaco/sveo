@@ -156,7 +156,7 @@ export type OpenGraphBusiness = {
 	street_address?: string;
 	city?: string;
 	state?: string;
-	postal_code?: number;
+	postal_code?: string;
 	country?: string;
 };
 
