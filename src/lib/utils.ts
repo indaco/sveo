@@ -4,11 +4,9 @@ import type { SEOContact, SEOPerson } from './types.js';
 export type Schema = Thing | WithContext<Thing>;
 
 export function serializeJSONLdSchema(thing: Schema, dataTestId: string) {
-	return `<script type="application/ld+json" data-testid="${dataTestId}">${JSON.stringify(
-		thing,
-		null,
-		2
-	)}</script>`;
+	const safeId = dataTestId.replace(/"/g, '');
+	const json = JSON.stringify(thing, null, 2).replace(/</g, '\\u003c');
+	return `<script type="application/ld+json" data-testid="${safeId}">${json}</script>`;
 }
 
 export const isSEOPerson = (contact: SEOContact): contact is SEOPerson =>
